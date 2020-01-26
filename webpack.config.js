@@ -9,20 +9,12 @@ const rules = [
     }
 ]
 module.exports = {
-  entry: {
-    [pkg.name]: "./src/index.tsx",
-  },
   target: "web",
-  externals: {
-    react: "react",
-    "react-dom": "react-dom",
-    lodash: "_",
-  },
+  entry: "./src/index.tsx",
   mode: "development",
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
-    library: "Typescript Dev",
   },
   module: {rules},
   resolve: {

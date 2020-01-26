@@ -8,7 +8,7 @@ export default function App(): JSX.Element {
     return (
         <div>
           <p>
-            <code> The sum is {sum(15, 15)}</code>
+            <code className="ta-c p-h200 t--intro" > The sum is {sum(15, 15)}</code>
           </p>
         </div>
     )
