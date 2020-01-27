@@ -2,5 +2,8 @@
     "prettier.jsxSingleQuote": true,
     "prettier.requireConfig": true,
     "prettier.useTabs": true,
-    "prettier.htmlWhitespaceSensitivity": "strict"
+    "prettier.htmlWhitespaceSensitivity": "strict","editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

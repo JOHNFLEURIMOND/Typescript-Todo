@@ -45,7 +45,12 @@ export default function App(): JSX.Element {
       <section>
         {todos.map((todos: iMyToDos, index: number) => (
           <Fragment key={index}>
-            <div style={{textDecoration: todos.complete ? 'line-through' : 'none'}} className="ta-c p-h200 t--intro">
+            <div
+              style={{
+                textDecoration: todos.complete ? "line-through" : "none"
+              }}
+              className="ta-c p-h200 t--intro"
+            >
               {todos.text}
             </div>
             <button
