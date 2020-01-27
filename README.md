@@ -1,6 +1,6 @@
 # :checkered_flag:What It Looks Like :checkered_flag:: 
 
-![ReactEmail](public/.png)
+![ReactEmail](public/todos.png)
 
 
 # How It's Made :nut_and_bolt:🔨 :hammer::wrench::
