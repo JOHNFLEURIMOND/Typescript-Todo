@@ -27,7 +27,6 @@ export default function App(): JSX.Element {
     setTodos(newTodos);
   };
 
-  console.log(todos);
   return (
     <Fragment>
       <h2 className="ta-c p-h200 t--intro">To-Do List</h2>
