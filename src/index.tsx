@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from "react";
-import ReactDom from "react-dom";
+import React, { Fragment, useState } from 'react';
+import ReactDom from 'react-dom';
 
 type FormElem = React.FormEvent<HTMLFormElement>;
 
@@ -9,13 +9,13 @@ export default function App(): JSX.Element {
     complete: boolean;
   }
 
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>('');
   const [todos, setTodos] = useState<iMyToDos[]>([]);
 
   const handleSubmit = (e: FormElem): void => {
     e.preventDefault();
     addTodo(value);
-    setValue("");
+    setValue('');
   };
   const addTodo = (text: string): void => {
     const newTodos: iMyToDos[] = [...todos, { text, complete: false }];
@@ -28,7 +28,7 @@ export default function App(): JSX.Element {
   };
 
   return (
-    <Fragment>
+    <>
       <h2 className="ta-c p-h200 t--intro">To-Do List</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -46,7 +46,7 @@ export default function App(): JSX.Element {
           <Fragment key={index}>
             <div
               style={{
-                textDecoration: todos.complete ? "line-through" : "none"
+                textDecoration: todos.complete ? 'line-through' : 'none',
               }}
               className="ta-c p-h200 t--intro"
             >
@@ -57,15 +57,15 @@ export default function App(): JSX.Element {
               onClick={() => completeTodos(index)}
               className="btn btn--c btn--br"
             >
-              {todos.complete ? "Incomplete" : "Complete"}
+              {todos.complete ? 'Incomplete' : 'Complete'}
             </button>
           </Fragment>
         ))}
       </section>
-    </Fragment>
+    </>
   );
 }
 
-const root = document.getElementById("app-root");
+const root = document.getElementById('app-root');
 
 ReactDom.render(<App />, root);

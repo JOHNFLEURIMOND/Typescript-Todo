@@ -1,4 +1,6 @@
 {
+    "eslint.alwaysShowStatus": true,
+    "eslint.debug": true,
     "prettier.jsxSingleQuote": true,
     "prettier.requireConfig": true,
     "prettier.useTabs": true,
