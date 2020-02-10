@@ -1,25 +1,38 @@
-const path = require("path");
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
+
 const rules = [
-    {
-        test: /\.tsx?/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-    }
-]
+  {
+    test: /\.tsx?/,
+    exclude: [
+      /\.html$/,
+      /\.(js|jsx)$/,
+      /\.node_modules/,
+      /\.css$/,
+      /\.scss$/,
+      /\.json$/,
+      /\.bmp$/,
+      /\.gif$/,
+      /\.jpe?g$/,
+      /\.png$/,
+    ],
+    loader: ['babel-loader', 'file-loader'],
+  },
+];
 module.exports = {
-  target: "web",
-  entry: "./src/index.tsx",
-  mode: "development",
+  target: 'web',
+  entry: './src/index.tsx',
+  mode: 'development',
   output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js',
   },
-  module: {rules},
+  module: { rules },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: ['.ts', '.tsx', '.js'],
   },
-  devServer:{
-      contentBase: './',
-      port: 5000
-  }
+  devServer: {
+    contentBase: './',
+    port: 5000,
+  },
 };

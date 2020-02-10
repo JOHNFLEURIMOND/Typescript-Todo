@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-shadow */
 import React, { Fragment, useState } from 'react';
@@ -30,8 +31,8 @@ export default function App(): JSX.Element {
   };
 
   return (
-    <>
-      <h2 className="ta-c p-h200 t--intro">To-Do List</h2>
+   <div>
+     <h2 className="ta-c p-h200 t--intro">To-Do List</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -64,7 +65,7 @@ export default function App(): JSX.Element {
           </Fragment>
         ))}
       </section>
-    </>
+   </div>
   );
 }
 
