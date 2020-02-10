@@ -3,33 +3,40 @@ import React from 'react';
 export interface CheckboxProps {
   name: string;
   value: string;
-  onChange: any;
+  onChange: () => void;
   required?: boolean;
   error?: string;
-  onBlur: any;
+  onBlur: () => void;
   title: string;
   checked: boolean;
 }
-
-export default class Checkbox extends React.Component<CheckboxProps> {
-  render() {
-    return (
-      <label className="cb">
-        <input
-          name={this.props.name}
-          value={this.props.value}
-          required={this.props.required}
-          type="checkbox"
-          className="cb-f"
-          onChange={this.props.onChange}
-          onBlur={this.props.onBlur}
-          checked={this.props.checked}
-        />
-        {this.props.error && (
-          <div className="t--subinfo t--err m-t100">{this.props.error}</div>
-        )}
-        <span className="cb-l">{this.props.title}</span>
-      </label>
-    );
-  }
+function Checkbox(props: CheckboxProps): React.ReactElement {
+  const {
+    name,
+    value,
+    required,
+    onChange,
+    onBlur,
+    checked,
+    error,
+    title,
+  } = props;
+  return (
+    <label htmlFor="Checkbox" className="cb">
+      <input
+        name={name}
+        value={value}
+        required={required}
+        type="checkbox"
+        className="cb-f"
+        onChange={onChange}
+        onBlur={onBlur}
+        checked={checked}
+      />
+      {error && <div className="t--subinfo t--err m-t100">{error}</div>}
+      <span className="cb-l">{title}</span>
+    </label>
+  );
 }
+
+export default Checkbox;

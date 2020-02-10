@@ -1,16 +1,18 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-shadow */
 import React, { Fragment, useState } from 'react';
 import ReactDom from 'react-dom';
 
 type FormElem = React.FormEvent<HTMLFormElement>;
 
 export default function App(): JSX.Element {
-  interface iMyToDos {
+  interface MyToDos {
     text: string;
     complete: boolean;
   }
 
   const [value, setValue] = useState<string>('');
-  const [todos, setTodos] = useState<iMyToDos[]>([]);
+  const [todos, setTodos] = useState<MyToDos[]>([]);
 
   const handleSubmit = (e: FormElem): void => {
     e.preventDefault();
@@ -18,11 +20,11 @@ export default function App(): JSX.Element {
     setValue('');
   };
   const addTodo = (text: string): void => {
-    const newTodos: iMyToDos[] = [...todos, { text, complete: false }];
+    const newTodos: MyToDos[] = [...todos, { text, complete: false }];
     setTodos(newTodos);
   };
   const completeTodos = (index: number): void => {
-    const newTodos: iMyToDos[] = [...todos];
+    const newTodos: MyToDos[] = [...todos];
     newTodos[index].complete = !newTodos[index].complete;
     setTodos(newTodos);
   };
@@ -34,7 +36,7 @@ export default function App(): JSX.Element {
         <input
           type="text"
           value={value}
-          onChange={e => setValue(e.target.value)}
+          onChange={(e): void => setValue(e.target.value)}
           className="txt-f txt-f--sm "
         />
         <button type="submit" className="btn btn--c btn--br">
@@ -42,7 +44,7 @@ export default function App(): JSX.Element {
         </button>
       </form>
       <section>
-        {todos.map((todos: iMyToDos, index: number) => (
+        {todos.map((todos: MyToDos, index: number) => (
           <Fragment key={index}>
             <div
               style={{
@@ -54,7 +56,7 @@ export default function App(): JSX.Element {
             </div>
             <button
               type="button"
-              onClick={() => completeTodos(index)}
+              onClick={(): void => completeTodos(index)}
               className="btn btn--c btn--br"
             >
               {todos.complete ? 'Incomplete' : 'Complete'}

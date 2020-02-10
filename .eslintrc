@@ -27,8 +27,13 @@
       "import/extensions": 0,
       "import/no-extraneous-dependencies": 0,
       "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
-      "react/jsx-props-no-spreading": 0
-    },
+      "react/jsx-props-no-spreading": 0,
+      "jsx-a11y/label-has-associated-control": [ 2, {
+        "labelComponents": ["CustomInputLabel"],
+        "labelAttributes": ["either"],
+        "controlComponents": ["CustomInput"],
+        "depth": 3
+    }]},
     "settings": {
       "react": {
         "version": "detect"
